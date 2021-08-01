@@ -1,14 +1,14 @@
 {% if article.series %}
 <div class="well">
-    <div class="col-sm-3 col-xs-12">
+    <div class="col-md-3">
     {% if article.series.previous %}
         <a href='{{ SITEURL }}/{{ article.series.previous.url }}'>{{ article.series.previous.title }}</a>
     {% endif %}
     </div>
-    <div class="col-sm-6 col-xs-12">
-    <small>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series</small>
+    <div class="col-md-6">
+    <h6>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series</h6>
     </div>
-    <div class="col-sm-3 col-xs-12">
+    <div class="col-md-3">
     {% if article.series.next %}
         <a href='{{ SITEURL }}/{{ article.series.next.url }}'>{{ article.series.next.title }}</a>
     {% endif %}
