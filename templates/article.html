@@ -22,9 +22,13 @@
     {% include "_post-title.html" %}
   </header>
 
+  {% include '_series.html' %}
+
   <article class="post-content">
     {{ article.content }}
   </article>
+
+  {% include '_series.html' %}
 
   {% include 'neighbors.html' %}
 </div>
