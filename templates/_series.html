@@ -1,12 +1,12 @@
 {% if article.series %}
-<div class="row">
+<div class="well">
     <div class="col-sm-3 col-xs-12">
     {% if article.series.previous %}
         <a href='{{ SITEURL }}/{{ article.series.previous.url }}'>{{ article.series.previous.title }}</a>
     {% endif %}
     </div>
     <div class="col-sm-6 col-xs-12">
-    <p>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series:</p>
+    <small>This post is part {{ article.series.index }} of the "{{ article.series.name }}" series</small>
     </div>
     <div class="col-sm-3 col-xs-12">
     {% if article.series.next %}
