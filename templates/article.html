@@ -27,8 +27,10 @@
   <article class="post-content">
     {{ article.content }}
   </article>
-
+  
   {% include '_series.html' %}
+
+  <a href="{{ SOURCE_URL }}/edit/main/content/{{ article.relative_source_path }}">Edit this page on Github</a>
 
   {% include 'neighbors.html' %}
 </div>
