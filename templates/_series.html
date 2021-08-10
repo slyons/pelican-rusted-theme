@@ -1,17 +1,36 @@
 {% if article.series %}
-<div class="well">
-    <div class="col-md-3">
+<nav class="post-neighbors panel">
+    <div class="col-md-4 col-sm-12">
     {% if article.series.previous %}
-        <a href='{{ SITEURL }}/{{ article.series.previous.url }}'>{{ article.series.previous.title }}</a>
+        <a class="neighbor prev-article" href="{{ SITEURL }}/{{ article.series.previous.url }}">
+            <span class="neighbor-arrow">«</span>
+            <span class="neighbor-content">
+                <span class="neighbor-label">Previous:</span>
+                <span class="neighbor-title">{{ article.series.previous.title }}</span>
+            </span>
+        </a>
     {% endif %}
     </div>
-    <div class="col-md-6">
-    <h6 class="text-center">This post is part {{ article.series.index }} of the "{{ article.series.name }}" series</h6>
+    <div class="col-md-4 col-sm-12 text-center">
+        <div class="col-md-12 col-sm-12">
+            <div class="row">
+                <span><code>{{article.series.name}}</code></span>
+            </div>
+            <div class="row">
+                <span>Part {{article.series.index}} of {{ article.series.all | length }}</span>
+            </div>
+        </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4 col-sm-12">
     {% if article.series.next %}
-        <a href='{{ SITEURL }}/{{ article.series.next.url }}'>{{ article.series.next.title }}</a>
+        <a class="neighbor prev-article" href="{{ SITEURL }}/{{ article.series.next.url }}">
+            <span class="neighbor-content">
+                <span class="neighbor-label">Next:</span>
+                <span class="neighbor-title">{{ article.series.next.title }}</span>
+            </span>
+            <span class="neighbor-arrow">»</span>
+        </a>
     {% endif %}
     </div>
-</div>
+</nav>
 {% endif %}
